@@ -37,7 +37,7 @@ set inccommand=split
 set number
 set relativenumber
 
-let mapleader="\<space>"
+let mapleader="\\"
 
 nnoremap <leader>ev :tabnew ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
