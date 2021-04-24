@@ -1,0 +1,655 @@
+{
+  "title": "Motospeed CK62",
+  "maintainers": ["Alexandro Silva"],
+  "homepage": "https://github.com/ykons/myLayerCK62",
+  "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=",
+  "rules": [
+    {
+      "description": "Map functions on OSX env",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": ["fn", "left_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "mute"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "hyphen",
+            "modifiers": {
+              "mandatory": ["fn", "left_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "volume_decrement"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "equal_sign",
+            "modifiers": {
+              "mandatory": ["fn", "left_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "volume_increment"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "escape",
+            "modifiers": {
+              "mandatory": ["left_command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": "left_command"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Map keys to BR layout",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": "left_shift"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": ["fn", "right_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "6",
+              "modifiers": "left_shift"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "grave_accent_and_tilde",
+              "modifiers": "left_option"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": "left_option"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "n",
+              "modifiers": "left_option"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": "left_option"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "u",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "u",
+              "modifiers": "left_option"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "i",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "i",
+              "modifiers": "left_option"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "slash"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": ["fn"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "slash",
+              "modifiers": "left_shift"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Open Mission Control by hold tab key",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab"
+          },
+          "to_after_key_up": [
+            {
+              "key_code": "tab"
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "mission_control",
+              "halt": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "CapsLock to FN/Escape",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "fn",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "key pressed",
+              "value": 1
+            }
+          ],
+          "to": [
+            {
+              "key_code": "caps_lock"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "fn",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "key pressed",
+                "value": 1
+              }
+            },
+            {
+              "key_code": "fn"
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "key pressed",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "key pressed",
+                  "value": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "description": "Map holding FN + 1 (FUNCTIONS)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f1"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f2"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f3"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f4"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "5",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f5"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "6",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f6"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "7",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f7"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "8",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f8"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "9",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f9"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f10"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "hyphen",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f11"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "equal_sign",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Map holding FN + 2 (NAVS)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "insert"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "comma",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "home"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "period",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "end"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_up"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_down"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Map holding FN + 3 (ARROWS)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_alt",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "application",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_control",
+            "modifiers": {
+              "mandatory": ["fn"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
